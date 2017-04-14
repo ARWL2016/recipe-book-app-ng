@@ -1,1 +1,33 @@
-<h3>Recipe Form</h3> 
+<h3>Add Recipe Form</h3> 
+<form #form="ngForm"> 
+
+  <div class="form-group"> 
+    <label class="control-label">Recipe Name</label>
+    <input 
+      type="text" 
+      class="form-control"
+      placeholder="enter a name for your recipe"
+      name="recipeName" 
+      [(ngModel)]="recipe.recipeName"
+      #inp1="ngModel" >
+  </div>
+
+  <div class="form-group"> 
+    <label class="control-label">Ingredients</label>
+    <textarea rows="5" cols="20" class="form-control"
+      name="ingredients"
+      placeholder="enter your ingredients, separated by commas"
+      [(ngModel)]="recipe.ingredients"
+      #inp2="ngModel"></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Save</button>
+  <button type="submit" class="btn btn-warning">Cancel</button>
+
+</form>
+<br>
+ngModel <br>
+{{inp1.value}} <br>
+{{inp2.value}}
+
+
