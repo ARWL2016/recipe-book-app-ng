@@ -8,7 +8,7 @@ export class LocalStorage {
   starterRecipes = [
     {
       recipeName: "Pumpkin Pie", 
-      ingredients: ["pumpkins", "pie"], 
+      ingredients: ["pumpkins", "milk", "eggs", "salt", "cinnamon"], 
       id: _.uniqueId()
     }, 
     {
@@ -18,7 +18,7 @@ export class LocalStorage {
     }, 
     {
       recipeName: "Spaghetti Carbonara", 
-      ingredients: ["spaghetti", "cream", "mushrooms"],
+      ingredients: ["spaghetti", "eggs", "bacon", "cheese", "black pepper"],
       id: _.uniqueId()
     }, 
     {
