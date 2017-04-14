@@ -1,0 +1,15 @@
+<div class="table-responsive">
+  <table class="table">
+    <thead> 
+      <tr>
+        <th><h4>{{recipe.recipeName}}</h4></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ingredient of recipe.ingredients">
+        <td>{{ingredient}}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+</div>

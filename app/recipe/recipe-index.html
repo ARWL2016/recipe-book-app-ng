@@ -8,8 +8,8 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let title of recipeTitles">
-        <td><a>{{title}}</a></td>
+      <tr *ngFor="let recipe of recipes">
+        <td><a [routerLink]="['/recipes', recipe.id]">{{recipe.recipeName}}</a></td>
       </tr>
     </tbody>
   </table>

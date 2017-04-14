@@ -4,18 +4,17 @@ import { Recipe } from "../models/recipe.model";
 
 @Component({
   selector: 'index',
-  templateUrl: 'app/recipe/recipe-index.component.html'
+  templateUrl: 'app/recipe/recipe-index.html'
 })
 export class RecipeIndex {
-  recipeTitles: string[]; 
+  recipes: Recipe; 
 
 
   constructor(private _localStorage: LocalStorage) {}
 
   ngOnInit():void {
-    this.recipeTitles = this._localStorage.fetchRecipes()
-      .map((recipe:Recipe) => recipe.recipeName); 
-    console.log(this.recipeTitles); 
+    this.recipes = this._localStorage.fetchRecipes()
+    console.log('Recipes:', this.recipes); 
 
   }
 }

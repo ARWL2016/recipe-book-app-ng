@@ -4,7 +4,7 @@ import { Recipe } from "../models/recipe.model";
 import { LocalStorage } from "../services/localstorage.service";
 
 @Component({
-  templateUrl: 'app/recipe/recipe-form.component.html'
+  templateUrl: 'app/recipe/recipe-form.html'
 })
 export class RecipeForm {
   recipe = new Recipe('', '', ''); 

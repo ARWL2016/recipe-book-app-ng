@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
-import * as _ from 'underscore'; 
+import * as _ from 'underscore';
+import { Recipe } from "../models/recipe.model";
 
 @Injectable()
 
@@ -8,22 +9,22 @@ export class LocalStorage {
     {
       recipeName: "Pumpkin Pie", 
       ingredients: ["pumpkins", "pie"], 
-      _id: _.uniqueId()
+      id: _.uniqueId()
     }, 
     {
       recipeName: "Roast Chicken", 
       ingredients: ["chicken", "potatoes"],
-      _id: _.uniqueId()
+      id: _.uniqueId()
     }, 
     {
       recipeName: "Spaghetti Carbonara", 
       ingredients: ["spaghetti", "cream", "mushrooms"],
-      _id: _.uniqueId()
+      id: _.uniqueId()
     }, 
     {
       recipeName: "French Onion Soup", 
       ingredients: ["onions", "soup"],
-      _id: _.uniqueId()
+      id: _.uniqueId()
     }  
   ]
 
@@ -35,6 +36,11 @@ export class LocalStorage {
       } else {
         return JSON.parse(localStorage.getItem("recipeList")); 
       }
+  }
+
+  fetchRecipeById(id:string): Recipe {
+    return (JSON.parse(localStorage.getItem("recipeList"))
+      .filter((recipe:Recipe) => recipe.id === id))[0]; 
   }
 
 
