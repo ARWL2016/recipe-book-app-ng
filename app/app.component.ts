@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LocalStorage } from "./services/localstorage.service";
  
 @Component({
     selector: 'rb-app',
@@ -17,7 +18,8 @@ import { Component } from '@angular/core';
     <div class="container">
       <router-outlet></router-outlet>
     </div>
-    `
+    `,
+    providers: [LocalStorage]
     
 })
 export class AppComponent { 

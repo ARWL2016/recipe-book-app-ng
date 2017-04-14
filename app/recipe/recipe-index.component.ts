@@ -1,4 +1,5 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { LocalStorage } from "../services/localstorage.service";
 
 @Component({
   selector: 'index',
@@ -6,4 +7,10 @@ import { Component } from "@angular/core";
 })
 export class RecipeIndex {
   recipeTitles: string[] = ["Chicken Pie", "Vindaloo", "Bibbimbap"]; 
+
+  constructor(private _localStorage: LocalStorage) {}
+
+  ngOnInit() {
+    this._localStorage.log("recipe-index init"); 
+  }
 }
