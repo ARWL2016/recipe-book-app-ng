@@ -7,11 +7,11 @@ import { LocalStorage } from "../services/localstorage.service";
   templateUrl: 'app/recipe/recipe-form.component.html'
 })
 export class RecipeForm {
-  recipe = new Recipe('', ''); 
+  recipe = new Recipe('', '', ''); 
 
   constructor(private _localStorage: LocalStorage) {}
 
   ngOnInit() {
-    this._localStorage.log("recipe-form init"); 
+   
   }
 }

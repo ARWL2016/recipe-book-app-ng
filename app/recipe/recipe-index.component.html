@@ -9,9 +9,10 @@
     </thead>
     <tbody>
       <tr *ngFor="let title of recipeTitles">
-        <td>{{title}}</td>
+        <td><a>{{title}}</a></td>
       </tr>
     </tbody>
   </table>
-  <button class="btn btn-primary" [routerLink]="['/form']">Add New Recipe</button>
+  
 </div>
+<button class="btn btn-primary" [routerLink]="['/form']">Add New Recipe</button>
