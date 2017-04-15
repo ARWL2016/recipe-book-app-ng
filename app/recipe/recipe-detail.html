@@ -1,15 +1,22 @@
-<div class="table-responsive">
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3>{{recipe.recipeName}}</h3>
+  </div>
+
+  <div class="panel-body">
   <table class="table">
     <thead> 
       <tr>
-        <th><h4>{{recipe.recipeName}}</h4></th>
+        <th><h4>Ingredients</h4></th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let ingredient of recipe.ingredients">
-        <td>{{ingredient}}</td>
+        <td class="myTableCell">{{ingredient}}</td>
       </tr>
     </tbody>
   </table>
+  </div>
   
 </div>
+<button [routerLink]="['/recipes']" class="btn btn-lg btn-success">Back to Recipe List</button>

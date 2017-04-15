@@ -4,7 +4,8 @@ import { Recipe } from "../models/recipe.model";
 
 @Component({
   selector: 'index',
-  templateUrl: 'app/recipe/recipe-index.html'
+  templateUrl: 'app/recipe/recipe-index.html', 
+  styleUrls: ['app/recipe/recipe-index.css']
 })
 export class RecipeIndex {
   recipes: Recipe; 

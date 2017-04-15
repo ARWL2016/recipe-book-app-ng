@@ -4,7 +4,8 @@ import { LocalStorage } from "../services/localstorage.service";
 import { Recipe } from "../models/recipe.model";
 
 @Component({
-  templateUrl: 'app/recipe/recipe-detail.html'
+  templateUrl: 'app/recipe/recipe-detail.html', 
+  styleUrls: ['app/recipe/recipe-detail.css']
 }) 
 export class RecipeDetail {
   id: string;

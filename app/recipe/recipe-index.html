@@ -1,18 +1,16 @@
 
 
-<div class="table-responsive">
+<div class="panel panel-primary">
+  <div class="panel-heading"><h3>Recipe List</h3></div>
   <table class="table">
-    <thead> 
-      <tr>
-        <th><h4>Recipe List</h4></th>
-      </tr>
-    </thead>
+    
     <tbody>
       <tr *ngFor="let recipe of recipes">
-        <td><a [routerLink]="['/recipes', recipe.id]">{{recipe.recipeName}}</a></td>
+        <td class="myTableCell"><a [routerLink]="['/recipes', recipe.id]">{{recipe.recipeName}}</a></td>
       </tr>
     </tbody>
   </table>
   
 </div>
-<button class="btn btn-primary" [routerLink]="['/form']">Add New Recipe</button>
+
+<button class="btn btn-lg btn-primary" [routerLink]="['/form']">Add New Recipe</button>
