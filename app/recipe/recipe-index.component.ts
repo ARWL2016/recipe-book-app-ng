@@ -8,14 +8,13 @@ import { Recipe } from "../models/recipe.model";
   styleUrls: ['app/recipe/recipe-index.css']
 })
 export class RecipeIndex {
-  recipes: Recipe; 
+  recipes: Recipe[]; 
 
 
   constructor(private _localStorage: LocalStorage) {}
 
   ngOnInit():void {
     this.recipes = this._localStorage.fetchRecipes()
-    console.log('Recipes:', this.recipes); 
 
   }
 }

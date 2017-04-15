@@ -1,11 +1,14 @@
+
 .myNavbar {
   max-width: 800px; 
   margin: 0 auto; 
   font-family: 'Roboto', sans-serif;
+  font-size:1.2em; 
 }
 
 .myContainer {
   max-width: 800px; 
   padding: 15px; 
   font-family: 'Roboto', sans-serif;
+  font-size:1.2em; 
 }

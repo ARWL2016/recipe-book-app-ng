@@ -1,5 +1,4 @@
-<h2>Add a New Recipe </h2> 
-<form #form="ngForm" (submit)="submitForm()" novalidate> 
+<form #form="ngForm" (submit)="submitForm(form)" novalidate> 
 
   <div class="form-group" [class.has-error]="inp1.touched && inp1.invalid"> 
     <label class="control-label">Recipe Name</label>
@@ -21,7 +20,7 @@
       name="ingredients"
       required
       placeholder="enter your ingredients, separated by commas"
-      [(ngModel)]="recipe.ingredients"
+      [(ngModel)]="recipe.ingredientsString"
       #inp2="ngModel"></textarea>
       <div class="alert alert-danger" *ngIf="inp2.touched && inp1.invalid">You must enter at least one ingredient</div>
   </div>

@@ -11,7 +11,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let ingredient of recipe.ingredients">
+      <tr *ngFor="let ingredient of recipe.ingredientsArray">
         <td class="myTableCell">{{ingredient}}</td>
       </tr>
     </tbody>
@@ -20,3 +20,5 @@
   
 </div>
 <button [routerLink]="['/recipes']" class="btn btn-lg btn-success">Back to Recipe List</button>
+<button class="btn btn-lg btn-danger" (click)="deleteRecipe()">Delete Recipe</button>
+<button class="btn btn-lg btn-warning" [routerLink]="['/form', recipe.id]">Edit Recipe</button>

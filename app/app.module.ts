@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { RecipeIndex } from "./recipe/recipe-index.component";
 import { RecipeForm } from "./recipe/recipe-form.component";
 import { RecipeDetail } from "./recipe/recipe-detail.component";
-import { AboutPage } from "./recipe/about-page.component";
+import { AboutPage } from "./about/about-page.component";
 
 @NgModule({
   imports: [ 
@@ -17,6 +17,7 @@ import { AboutPage } from "./recipe/about-page.component";
       { path: 'recipes', component: RecipeIndex}, 
       { path: 'recipes/:id', component: RecipeDetail}, 
       { path: 'form', component: RecipeForm }, 
+      { path: 'form/:id', component: RecipeForm }, 
       { path: 'about', component: AboutPage }, 
       { path: '', redirectTo: 'recipes', pathMatch: 'full'},
       { path: '**', redirectTo: 'recipes', pathMatch: 'full'}
