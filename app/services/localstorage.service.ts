@@ -35,11 +35,14 @@ export class LocalStorage {
   fetchRecipeList() {
     return JSON.parse(localStorage.getItem("recipeList"));
   }
+  setRecipeList(list: Recipe[]) {
+    localStorage.setItem("recipeList", JSON.stringify(list));
+  }
 
   fetchRecipes(): Recipe[] {
     const recipeList = this.fetchRecipeList(); 
       if (!recipeList) {
-        localStorage.setItem("recipeList", JSON.stringify(this.starterRecipes));
+        this.setRecipeList(this.starterRecipes);
         return this.fetchRecipeList(); 
       } else {
         console.log('fetchrecipes: ', recipeList); 
@@ -55,28 +58,22 @@ export class LocalStorage {
   saveRecipe(recipe: Recipe) {
     recipe.id = _.uniqueId(); 
     recipe.ingredientsArray = recipe.ingredientsString.split(','); 
-    console.log('save recipes', recipe); 
     const recipeList = this.fetchRecipeList();
     recipeList.push(recipe); 
-    localStorage.setItem("recipeList", JSON.stringify(recipeList)); 
+    this.setRecipeList(recipeList); 
   }
 
   deleteRecipeById(id: string):void {
     const filteredList = this.fetchRecipeList().filter((recipe: Recipe) => recipe.id !== id); 
-    localStorage.setItem("recipeList", JSON.stringify(filteredList)); 
+    this.setRecipeList(filteredList); 
   }
 
-  editRecipe(editedRecipe: Recipe) {
-    console.log('edit', editedRecipe); 
-    const recipeList = this.fetchRecipeList();
-    const filteredList = recipeList.filter((recipe: Recipe) => {
-      return recipe.id !== editedRecipe.id; 
-    }); 
+  editRecipe(editedRecipe: Recipe) { 
+    const filteredList = this.fetchRecipeList()
+        .filter((recipe: Recipe) => recipe.id !== editedRecipe.id); 
     editedRecipe.ingredientsArray = editedRecipe.ingredientsString.split(','); 
-    console.log(filteredList); 
     filteredList.push(editedRecipe); 
-    localStorage.setItem("recipeList", JSON.stringify(filteredList)); 
-    
+    this.setRecipeList(filteredList); 
   }
 
 

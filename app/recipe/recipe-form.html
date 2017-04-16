@@ -1,10 +1,17 @@
-<form #form="ngForm" (submit)="submitForm(form)" novalidate> 
 
+
+<form #form="ngForm" (submit)="submitForm(form)" class="myForm" novalidate> 
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3>Add Recipe</h3>
+  </div>
+  <div class="panel-body">
   <div class="form-group" [class.has-error]="inp1.touched && inp1.invalid"> 
-    <label class="control-label">Recipe Name</label>
+    <label class="control-label myFormLabel">Recipe Name</label>
     <input 
       type="text" 
-      class="form-control"
+      class="form-control myRecipeNameInput"
       required
       placeholder="enter a name for your recipe"
       name="recipeName" 
@@ -15,8 +22,9 @@
   </div>
 
   <div class="form-group" [class.has-error]="inp2.touched && inp1.invalid"> 
-    <label class="control-label">Ingredients</label>
-    <textarea rows="5" cols="20" class="form-control"
+    <label class="control-label myFormLabel">Ingredients</label>
+    <textarea rows="7" cols="20" 
+      class="form-control myIngredientsInput"
       name="ingredients"
       required
       placeholder="enter your ingredients, separated by commas"
@@ -24,6 +32,8 @@
       #inp2="ngModel"></textarea>
       <div class="alert alert-danger" *ngIf="inp2.touched && inp1.invalid">You must enter at least one ingredient</div>
   </div>
+  </div>
+</div>
 
   <button type="submit" class="btn btn-lg btn-primary" [disabled]="form.invalid">Save</button>
   <button [routerLink]="['/recipes']" class="btn btn-lg btn-warning">Cancel</button>

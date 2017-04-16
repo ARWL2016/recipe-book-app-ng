@@ -1,16 +1,21 @@
-
-
 <div class="panel panel-primary">
-  <div class="panel-heading"><h3>Recipe List</h3></div>
-  <table class="table">
-    
-    <tbody>
-      <tr *ngFor="let recipe of recipes">
-        <td class="myTableCell"><a [routerLink]="['/recipes', recipe.id]">{{recipe.recipeName}}</a></td>
-      </tr>
-    </tbody>
-  </table>
-  
-</div>
+  <div class="panel-heading">
+    <h3>Recipe List</h3>
+  </div>
+  <div class="panel-body">
+    <table class="table">
+      <thead> 
+        <tr>
+          <th><h4>You have {{numberOfRecipes}} recipe{{plural}}. Click below to see the details.</h4></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let recipe of recipes">
+          <td class="myTableCell"><a [routerLink]="['/recipes', recipe.id]">{{recipe.recipeName}}</a></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
 
 <button class="btn btn-lg btn-primary" [routerLink]="['/form']">Add New Recipe</button>

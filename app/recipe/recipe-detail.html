@@ -19,6 +19,6 @@
   </div>
   
 </div>
-<button [routerLink]="['/recipes']" class="btn btn-lg btn-success">Back to Recipe List</button>
-<button class="btn btn-lg btn-danger" (click)="deleteRecipe()">Delete Recipe</button>
 <button class="btn btn-lg btn-warning" [routerLink]="['/form', recipe.id]">Edit Recipe</button>
+<button class="btn btn-lg btn-danger" (click)="deleteRecipe()">Delete Recipe</button>
+<button [routerLink]="['/recipes']" class="btn btn-lg btn-success btn-back">Back to Recipe List</button>

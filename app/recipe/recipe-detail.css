@@ -1,3 +1,16 @@
+.panel-heading {
+  background-color: #118AB2; 
+}
+
 .myTableCell {
   padding: 15px 0 15px 15px; 
 }
+
+.btn-danger {
+  background-color: #EF476F; 
+}
+
+.btn-back {
+  float: right; 
+}
+

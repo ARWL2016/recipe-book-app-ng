@@ -1,3 +1,11 @@
+button {
+  margin-right: 10px; 
+}
+
+body {
+  background: url('./assets/images/bg-img-wide.jpg') no-repeat;
+  background-size:  cover; 
+}
 
 .myNavbar {
   max-width: 800px; 
@@ -11,4 +19,5 @@
   padding: 15px; 
   font-family: 'Roboto', sans-serif;
   font-size:1.2em; 
+  
 }
