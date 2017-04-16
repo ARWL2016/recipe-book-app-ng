@@ -13,8 +13,8 @@ export class LocalStorage {
       id: _.uniqueId()
     }, 
     {
-      recipeName: "Roast Chicken", 
-      ingredientsArray: ["chicken", "potatoes"],
+      recipeName: "Peshwari Naan", 
+      ingredientsArray: ["flour", "yeast", "yoghurt", "coconut", "almonds"],
       ingredientsString: '',
       id: _.uniqueId()
     }, 
@@ -26,7 +26,7 @@ export class LocalStorage {
     }, 
     {
       recipeName: "French Onion Soup", 
-      ingredientsArray: ["onions", "soup"],
+      ingredientsArray: ["onions", "butter", "sugar", "dry sherry", "beef stock", "thyme"],
       ingredientsString: '',
       id: _.uniqueId()
     }  

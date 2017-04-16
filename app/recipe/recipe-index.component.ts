@@ -10,7 +10,7 @@ import { Recipe } from "../models/recipe.model";
 export class RecipeIndex {
   recipes: Recipe[]; 
   numberOfRecipes: number; 
-  plural: string = 's'; 
+  plural: string; 
 
 
   constructor(private _localStorage: LocalStorage) {}
@@ -18,7 +18,7 @@ export class RecipeIndex {
   ngOnInit():void {
     this.recipes = this._localStorage.fetchRecipes(); 
     this.numberOfRecipes = this.recipes.length; 
-    this.plural = this.numberOfRecipes === 1 ? 's' : ''; 
+    this.plural = this.numberOfRecipes === 1 ? '' : 's'; 
 
   }
 }

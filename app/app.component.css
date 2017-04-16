@@ -19,5 +19,10 @@ body {
   padding: 15px; 
   font-family: 'Roboto', sans-serif;
   font-size:1.2em; 
-  
+}
+
+
+.about-link {
+  float: right; 
+  margin-right: 20px; 
 }

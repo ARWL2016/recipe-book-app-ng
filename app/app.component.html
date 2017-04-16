@@ -1,11 +1,15 @@
     <div>
       <nav class="navbar navbar-default">
         <div class="myNavbar"> 
-          <a class="navbar-brand">{{pageTitle}}</a>
+          <a class="navbar-brand"><b>{{brand}}</b></a>
             <ul class="nav navbar-nav"> 
-              <li><a [routerLink]="['/recipes']">Recipe List</a></li>
-              <li><a [routerLink]="['/form']">Add Recipe</a></li>
-              <li><a [routerLink]="['/about']">About</a></li>
+              <li><a [routerLink]="['/recipes']">RECIPES</a></li>
+              <li><a [routerLink]="['/form']">ADD RECIPE</a></li>
+              <li><a [routerLink]="['/about']">ABOUT</a></li>
+              
+          </ul>
+          <ul class="nav navbar-nav about-link">
+            <li><a href="https://github.com/ARWL2016/recipe-book-app-ng" target="_blank">View on Github</a></li>
           </ul>
         </div>
       </nav>

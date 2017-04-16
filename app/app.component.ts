@@ -8,5 +8,5 @@ import { LocalStorage } from "./services/localstorage.service";
     
 })
 export class AppComponent { 
-  pageTitle: string = 'Recipe Book'; 
+  brand: string = 'RECIPE BOOK'; 
 }
