@@ -32,7 +32,7 @@ export class LocalStorage {
     }  
   ]
 
-  fetchRecipeList() {
+  fetchRecipeList(): Recipe[] {
     return JSON.parse(localStorage.getItem("recipeList"));
   }
   setRecipeList(list: Recipe[]) {
@@ -43,11 +43,9 @@ export class LocalStorage {
     const recipeList = this.fetchRecipeList(); 
       if (!recipeList) {
         this.setRecipeList(this.starterRecipes);
-        return this.fetchRecipeList(); 
-      } else {
-        console.log('fetchrecipes: ', recipeList); 
-        return this.fetchRecipeList(); 
-      }
+      }  
+      return this.fetchRecipeList(); 
+      
   }
 
   fetchRecipeById(id:string): Recipe {
