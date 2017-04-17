@@ -5,7 +5,7 @@ import { LocalStorage } from "./services/localstorage.service";
     selector: 'rb-app',
     templateUrl: 'app/app.component.html', 
     providers: [LocalStorage]
-    
+
 })
 export class AppComponent { 
   brand: string = 'RECIPE BOOK'; 

@@ -1,16 +1,30 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, trigger, state, style, animate, transition } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { Router, ActivatedRoute } from '@angular/router'; 
 import { Recipe } from "../models/recipe.model";
 import { LocalStorage } from "../services/localstorage.service";
+import { pageTransition } from "../animations";
 
 @Component({
   templateUrl: 'app/recipe/recipe-form.html',
-  styleUrls: ['app/recipe/recipe-form.css']
-})
+  styleUrls: ['app/recipe/recipe-form.css'], 
+  animations: [ pageTransition, 
+    trigger('invalid', [
+      state('displayed', style({ transform: 'translateY(0)' })), 
+      transition('void => displayed', [
+        style({ opacity: 0}), 
+        animate('500ms ease-in')
+      ]), 
+      transition('displayed => void', [
+        animate(500, style({ opacity: 0}))
+      ])  
+    ]),  //trigger
+  ] //anim
+}) //component 
 export class RecipeForm {
   recipe = new Recipe('', '', [], ''); 
   id: string; 
+  state: string = 'displayed';
 
   constructor(
     private _localStorage: LocalStorage, 

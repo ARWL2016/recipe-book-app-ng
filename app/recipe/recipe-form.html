@@ -1,13 +1,13 @@
 
 
-<form #form="ngForm" (submit)="submitForm(form)" class="myForm" novalidate> 
+<form #form="ngForm" (submit)="submitForm(form)" class="myForm" novalidate > 
 
-<div class="panel panel-primary">
+<div class="panel panel-primary" [@showPage]="'on'">
   <div class="panel-heading">
     <h3>Add Recipe</h3>
   </div>
   <div class="panel-body">
-  <div class="form-group" [class.has-error]="inp1.touched && inp1.invalid"> 
+  <div class="form-group" [class.has-error]="inp1.touched && inp1.invalid" > 
     <label class="control-label myFormLabel">Recipe Name</label>
     <input 
       type="text" 
@@ -17,11 +17,11 @@
       name="recipeName" 
       [(ngModel)]="recipe.recipeName"
       #inp1="ngModel" >
-      <div class="alert alert-danger" *ngIf="inp1.touched && inp1.invalid">You must enter a recipe name</div>
+      <div class="alert alert-danger" *ngIf="inp1.touched && inp1.invalid" [@invalid]="'displayed'" >You must enter a recipe name</div>
 
   </div>
 
-  <div class="form-group" [class.has-error]="inp2.touched && inp1.invalid"> 
+  <div class="form-group" [class.has-error]="inp2.touched && inp2.invalid"> 
     <label class="control-label myFormLabel">Ingredients</label>
     <textarea rows="7" cols="20" 
       class="form-control myIngredientsInput"
@@ -30,7 +30,7 @@
       placeholder="enter your ingredients, separated by commas"
       [(ngModel)]="recipe.ingredientsString"
       #inp2="ngModel"></textarea>
-      <div class="alert alert-danger" *ngIf="inp2.touched && inp1.invalid">You must enter at least one ingredient</div>
+      <div class="alert alert-danger" *ngIf="inp2.touched && inp2.invalid" [@invalid]="'displayed'" >You must enter at least one ingredient</div>
   </div>
   </div>
 </div>

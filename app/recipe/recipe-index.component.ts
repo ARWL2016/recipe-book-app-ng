@@ -1,11 +1,13 @@
 import { Component, OnInit } from "@angular/core";
 import { LocalStorage } from "../services/localstorage.service";
 import { Recipe } from "../models/recipe.model";
+import { pageTransition } from "../animations";
 
 @Component({
   selector: 'index',
   templateUrl: 'app/recipe/recipe-index.html', 
-  styleUrls: ['app/recipe/recipe-index.css']
+  styleUrls: ['app/recipe/recipe-index.css'], 
+  animations: [ pageTransition ]
 })
 export class RecipeIndex {
   recipes: Recipe[]; 
