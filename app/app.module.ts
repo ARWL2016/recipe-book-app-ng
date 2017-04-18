@@ -8,6 +8,8 @@ import { RecipeIndex } from "./recipe/recipe-index.component";
 import { RecipeForm } from "./recipe/recipe-form.component";
 import { RecipeDetail } from "./recipe/recipe-detail.component";
 import { AboutPage } from "./about/about-page.component";
+import { LocalStorage } from "./services/localstorage.service";
+import { ToastrService } from "./services/toastr.service";
 
 @NgModule({
   imports: [ 
@@ -30,6 +32,7 @@ import { AboutPage } from "./about/about-page.component";
     RecipeForm, 
     AboutPage
      ],
+  providers: [LocalStorage, ToastrService],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

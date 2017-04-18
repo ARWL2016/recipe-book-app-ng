@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Recipe } from "../models/recipe.model";
 import { LocalStorage } from "../services/localstorage.service";
 import { pageTransition } from "../animations";
+import { ToastrService } from "../services/toastr.service";
 
 @Component({
   templateUrl: 'app/recipe/recipe-form.html',
@@ -28,6 +29,7 @@ export class RecipeForm {
 
   constructor(
     private _localStorage: LocalStorage, 
+    private _toastr: ToastrService,
     private _router: Router, 
     private _route: ActivatedRoute
     ) {
@@ -48,9 +50,11 @@ export class RecipeForm {
       console.log('submit form', this.recipe); 
       this._localStorage.saveRecipe(this.recipe); 
       this._router.navigate(['/recipes']); 
+      this._toastr.success('Recipe added!'); 
     } else {
       this._localStorage.editRecipe(this.recipe); 
       this._router.navigate(['/recipes']); 
+      this._toastr.success('Changes saved!'); 
       }
   }
 }
