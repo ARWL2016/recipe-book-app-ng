@@ -6,8 +6,9 @@ import { ToastrService } from "../services/toastr.service";
 
 
 @Component({
-  templateUrl: 'app/recipe/recipe-detail.html', 
-  styleUrls: ['app/recipe/recipe-detail.css']
+  moduleId: module.id,
+  templateUrl: 'recipe-detail.html', 
+  styleUrls: ['recipe-detail.css']
 
 
 }) 
@@ -16,10 +17,10 @@ export class RecipeDetail {
   recipe: Recipe;  
 
   constructor(
-    private _route: ActivatedRoute, 
-    private _router: Router, 
-    private _localStorage: LocalStorage, 
-    private _toastr: ToastrService
+    public _route: ActivatedRoute, 
+    public _router: Router, 
+    public _localStorage: LocalStorage, 
+    public _toastr: ToastrService
     ) {
     console.log(this._route.snapshot.params['id']);
     this.id = this._route.snapshot.params['id'];

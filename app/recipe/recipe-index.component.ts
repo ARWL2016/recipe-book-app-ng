@@ -5,8 +5,9 @@ import { pageTransition } from "../animations";
 
 @Component({
   selector: 'index',
-  templateUrl: 'app/recipe/recipe-index.html', 
-  styleUrls: ['app/recipe/recipe-index.css'], 
+  moduleId: module.id,
+  templateUrl: 'recipe-index.html', 
+  styleUrls: ['recipe-index.css'], 
   animations: [ pageTransition ]
 })
 export class RecipeIndex {
@@ -15,7 +16,7 @@ export class RecipeIndex {
   plural: string; 
 
 
-  constructor(private _localStorage: LocalStorage) {}
+  constructor(public _localStorage: LocalStorage) {}
 
   ngOnInit():void {
     this.recipes = this._localStorage.fetchRecipes(); 

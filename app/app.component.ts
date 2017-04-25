@@ -3,7 +3,8 @@ import { LocalStorage } from "./services/localstorage.service";
  
 @Component({
     selector: 'rb-app',
-    templateUrl: 'app/app.component.html', 
+    moduleId: module.id,
+    templateUrl: 'app.component.html', 
     providers: [LocalStorage]
 
 })

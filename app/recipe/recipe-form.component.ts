@@ -7,8 +7,9 @@ import { pageTransition } from "../animations";
 import { ToastrService } from "../services/toastr.service";
 
 @Component({
-  templateUrl: 'app/recipe/recipe-form.html',
-  styleUrls: ['app/recipe/recipe-form.css'], 
+  moduleId: module.id,
+  templateUrl: 'recipe-form.html',
+  styleUrls: ['recipe-form.css'], 
   animations: [ pageTransition, 
     trigger('invalid', [
       state('displayed', style({ transform: 'translateY(0)' })), 
@@ -28,10 +29,10 @@ export class RecipeForm {
   state: string = 'displayed';
 
   constructor(
-    private _localStorage: LocalStorage, 
-    private _toastr: ToastrService,
-    private _router: Router, 
-    private _route: ActivatedRoute
+    public _localStorage: LocalStorage, 
+    public _toastr: ToastrService,
+    public _router: Router, 
+    public _route: ActivatedRoute
     ) {
       this.id = this._route.snapshot.params['id'];
     }
