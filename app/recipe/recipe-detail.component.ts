@@ -9,8 +9,6 @@ import { ToastrService } from "../services/toastr.service";
   moduleId: module.id,
   templateUrl: 'recipe-detail.html', 
   styleUrls: ['recipe-detail.css']
-
-
 }) 
 export class RecipeDetail {
   id: string;
